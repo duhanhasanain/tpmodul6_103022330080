@@ -24,10 +24,16 @@ namespace tpmodul6_103022330080
             this.id = rnd.Next(100000);
 
         }
-        public void IncreasePlayCount(int count)
+
+        public Debug GetDebug()
+        {
+            return Debug;
+        }
+
+        public void IncreasePlayCount(int count, Debug debug)
         {
             Contract.Requires(count <= 100000000);
-            Debug.Assert(count <= 10000000 && count > 0, "Terlalu banyak Play count, tidak valid");
+            debug.Assert(count <= 10000000 && count > 0, "Terlalu banyak Play count, tidak valid");
             checked
             {
                 this.playCount += (count);
